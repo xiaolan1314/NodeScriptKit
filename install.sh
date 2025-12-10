@@ -51,7 +51,7 @@ mkdir -p /etc/nsk/modules.d/extend
 
 cd /tmp
 temp_dir=$(mktemp -d)
-curl -sLo - $temp_download_file "${PROXY_URL}/https://github.com/NodeSeekDev/NodeScriptKit/archive/refs/tags/$MENU_VERSION.tar.gz" | \
+curl -sLo - $temp_download_file "${PROXY_URL}https://github.com/NodeSeekDev/NodeScriptKit/archive/refs/tags/$MENU_VERSION.tar.gz" | \
     tar -xzv -C $temp_dir
 [ -f "/etc/nsk/config.toml" ] || cp $temp_dir/*/menu.toml /etc/nsk/config.toml
 rm -rf /etc/nsk/modules.d/default/*  # Remove old scripts to prevent conflicts
