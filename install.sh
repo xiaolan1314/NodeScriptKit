@@ -29,10 +29,10 @@ else
     exit 1
 fi
 
-BIN_VERSION="$(curl -Ls -o /dev/null -w %{url_effective} ${PROXY_URL}/https://github.com/NodeSeekDev/NskCore/releases/latest)"
+BIN_VERSION="$(curl -Ls -o /dev/null -w %{url_effective} ${PROXY_URL}https://github.com/NodeSeekDev/NskCore/releases/latest)"
 BIN_VERSION=${BIN_VERSION##*/}
 BIN_FILENAME="nskCore-$goos-$arch$ext"
-BIN_URL="${PROXY_URL}/https://github.com/NodeSeekDev/NskCore/releases/download/$BIN_VERSION/$BIN_FILENAME"
+BIN_URL="${PROXY_URL}https://github.com/NodeSeekDev/NskCore/releases/download/$BIN_VERSION/$BIN_FILENAME"
 
 curl -Lso /usr/bin/nskCore $BIN_URL
 chmod u+x /usr/bin/nskCore
@@ -43,7 +43,7 @@ if tar --version 2>&1 | grep -qi 'busybox'; then
     fi
 fi
 
-MENU_URL="$(curl -Ls -o /dev/null -w %{url_effective} ${PROXY_URL}/https://github.com/NodeSeekDev/NodeScriptKit/releases/latest)"
+MENU_URL="$(curl -Ls -o /dev/null -w %{url_effective} ${PROXY_URL}https://github.com/NodeSeekDev/NodeScriptKit/releases/latest)"
 MENU_VERSION="${MENU_URL##*/}"
 
 mkdir -p /etc/nsk/modules.d/default
